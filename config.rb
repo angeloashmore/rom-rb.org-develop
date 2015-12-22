@@ -18,9 +18,12 @@ end
 # General configuration
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
-set :images_dir, 'assets/images'
 
-activate :directory_indexes
+activate :external_pipeline,
+  name: :webpack,
+  command: build? ? './node_modules/webpack/bin/webpack.js --bail' : './node_modules/webpack/bin/webpack.js --watch -d',
+  source: '.tmp/dist',
+  latency: 1
 
 # Development-specific configuration
 configure :development do
@@ -29,8 +32,5 @@ end
 
 # Build-specific configuration
 configure :build do
-  activate :minify_css
-  activate :minify_javascript
-  activate :asset_hash
-  activate :relative_assets
+  ignore { |path| path =~ /\.scss$/ }
 end
