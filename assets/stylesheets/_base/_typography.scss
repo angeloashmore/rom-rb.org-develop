@@ -1,0 +1,62 @@
+html {
+  @include vr-baseline(ms(0), ms(1));
+}
+
+body {
+  font-family: font-stack(primary);
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol{
+  margin-bottom: vr(ms(0));
+  margin-top: 0;
+}
+
+h1 {
+  font-size: ms(2);
+  font-weight: 500;
+  line-height: vr(ms(2));
+}
+
+h2 {
+  font-size: ms(1);
+  font-weight: 500;
+  line-height: vr(ms(1));
+}
+
+h3 {
+  font-size: ms(-1);
+  font-weight: 600;
+  line-height: vr(ms(-1));
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul, ol {
+  margin-left: vr(ms(0));
+}
+
+li {
+  display: list-item;
+  list-style-type: disc;
+}
+
+small {
+  font-size: ms(-1);
+  line-height: vr(ms(-1));
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: underline;
+}

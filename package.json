@@ -27,7 +27,6 @@
     "modularscale-sass": "^2.1.1",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.2",
-    "sassline": "^2.1.0",
     "susy": "^2.2.9",
     "webpack": "^1.12.9"
   }

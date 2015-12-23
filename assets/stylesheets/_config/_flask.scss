@@ -1,14 +1,3 @@
-// Susy
-$susy: (
-  columns: 12,
-  gutters: 1,
-  container: 920px,
-  gutter-position: inside
-);
-
-// Breakpoint Slicer
-$slicer-breakpoints: 0 568px 768px;
-
 // Flask
 $flask-color-base-white: #fff !default;
 $flask-color-base-black: #000 !default;
@@ -18,28 +7,32 @@ $flask-color-base-purple: #a10d87 !default;
 $palettes: (
   white: (
     base: $flask-color-base-white,
-    lighten: lighten($flask-color-base-white, 15),
+    light: lighten($flask-color-base-white, 15),
     dark: darken($flask-color-base-white, 15)
   ),
 
   black: (
     base: $flask-color-base-black,
-    lighten: lighten($flask-color-base-black, 15),
+    light: lighten($flask-color-base-black, 15),
     dark: darken($flask-color-base-black, 15)
   ),
 
   beige: (
     base: $flask-color-base-beige,
-    lighten: lighten($flask-color-base-beige, 15),
+    light: lighten($flask-color-base-beige, 15),
     dark: darken($flask-color-base-beige, 15),
     extra-dark: darken($flask-color-base-beige, 75)
   ),
 
   purple: (
     base: $flask-color-base-purple,
-    lighten: lighten($flask-color-base-purple, 15),
+    light: lighten($flask-color-base-purple, 15),
     dark: darken($flask-color-base-purple, 15)
   )
+);
+
+$palette-aliases: (
+  accent: purple
 );
 
 $fonts: (
@@ -56,4 +49,8 @@ $font-fallbacks: (
     Arial,
     sans-serif
   )
+);
+
+$font-aliases: (
+  primary: open-sans
 );

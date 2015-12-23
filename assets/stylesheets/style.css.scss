@@ -1,17 +1,14 @@
 // Global imports
-@import '~breakpoint-sass';
+@import '~breakpoint-slicer';
 @import '~susy';
 @import '~modularscale-sass';
 @import '~flask';
 
+// Libraries
+@import '_lib/**/*';
+
 // Config
-@import '_config';
-
-// Foundation
-@import '_foundation';
-
-// Pygments theme
-@import '_pygments';
+@import '_config/**/*';
 
 // Base
 @import '_base/**/*';

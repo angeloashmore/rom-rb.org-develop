@@ -1,0 +1,7 @@
+a {
+  color: palette(accent);
+
+  &:hover {
+    color: palette(accent, dark);
+  }
+}
