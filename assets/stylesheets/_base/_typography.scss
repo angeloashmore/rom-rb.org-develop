@@ -34,7 +34,9 @@ h3 {
   line-height: vr(ms(-1));
 }
 
-p:last-child {
+p:last-child,
+ul:last-child,
+ol:last-child {
   margin-bottom: 0;
 }
 

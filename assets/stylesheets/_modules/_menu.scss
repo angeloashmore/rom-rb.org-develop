@@ -1,0 +1,30 @@
+.menu {
+  &__items {
+    /* display: none; */
+    margin-left: 0;
+  }
+
+  &__item {
+    border-bottom: 1px solid palette(beige, semidark);
+    list-style: none;
+
+    &:first-child {
+      border-top: 1px solid palette(beige, semidark);
+    }
+
+    &__link {
+      display: block;
+      font-size: ms(-1);
+      font-weight: 600;
+      padding-bottom: vr(ms(0), 0.25);
+      padding-top: vr(ms(0), 0.25);
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &--is-active {
+        @extend .menu__item__link;
+        color: palette(black);
+      }
+    }
+  }
+}

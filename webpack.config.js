@@ -7,7 +7,7 @@ module.exports = {
   debug: true,
 
   entry: {
-    style: './assets/stylesheets/style.css.scss',
+    all: './assets/stylesheets/all.css.scss',
   },
 
   output: {
@@ -31,7 +31,7 @@ module.exports = {
 
   plugins: [
     new Clean(['.tmp']),
-    new ExtractTextPlugin('assets/stylesheets/style.css', {
+    new ExtractTextPlugin('assets/stylesheets/all.css', {
       allChunks: true,
     }),
   ],

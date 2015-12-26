@@ -1,0 +1,44 @@
+.header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: vr(ms(0));
+
+  &__logo {
+    background-image: url(/images/logo--small.svg);
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: vr(ms(1));
+    width: vr(ms(1), 96/32);
+
+    &__link {
+      display: block;
+      height: 100%;
+      text-indent: -1000px;
+    }
+  }
+
+  &__menu-toggler {
+    background-image: url(/images/menu__toggler.svg);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    display: block;
+    height: vr(ms(0));
+    width: vr(ms(0), 25/22);
+    text-indent: -1000px;
+  }
+
+  &__menu {
+    display: none;
+    flex-basis: 100%;
+
+    &--active {
+      @extend .header__menu;
+      display: block;
+      margin-top: vr(ms(0));
+    }
+  }
+}
