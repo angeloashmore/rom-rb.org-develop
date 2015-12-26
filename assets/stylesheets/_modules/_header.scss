@@ -21,7 +21,7 @@
   }
 
   &__menu-toggler {
-    background-image: url(/images/menu__toggler.svg);
+    background-image: url(/images/menu-toggler.svg);
     background-position: right center;
     background-repeat: no-repeat;
     background-size: auto 100%;
@@ -29,6 +29,11 @@
     height: vr(ms(0));
     width: vr(ms(0), 25/22);
     text-indent: -1000px;
+
+    &--active {
+      @extend .header__menu-toggler;
+      background-image: url(/images/menu-toggler--active.svg);
+    }
   }
 
   &__menu {
