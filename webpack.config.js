@@ -7,12 +7,15 @@ module.exports = {
   debug: true,
 
   entry: {
-    all: './assets/stylesheets/all.css.scss',
+    main: [
+      './assets/javascripts/all.js',
+      './assets/stylesheets/all.css.scss',
+    ],
   },
 
   output: {
     path: __dirname + '/.tmp/dist',
-    filename: 'assets/stylesheets/[name].css',
+    filename: 'assets/javascripts/all.js',
   },
 
   module: {
@@ -22,11 +25,10 @@ module.exports = {
       loader: 'import-glob',
     }],
 
-    loaders: [{
-      test: /\.scss$/,
-      exclude: /node_modules|\.tmp|vendor/,
-      loader: ExtractTextPlugin.extract('css!sass'),
-    }],
+    loaders: [
+      { test: /\.js?$/, loader: "babel", exclude: /node_modules/ },
+      { test: /\.scss$/, exclude: /node_modules|\.tmp|vendor/, loader: ExtractTextPlugin.extract('css!sass') },
+    ],
   },
 
   plugins: [

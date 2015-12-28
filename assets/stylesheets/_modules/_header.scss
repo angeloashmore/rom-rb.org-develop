@@ -30,7 +30,7 @@
     height: vr(ms(0));
     width: vr(ms(0), 25/22);
 
-    &--active {
+    &--is-active {
       @extend .header__menu-toggler;
       background-image: url(/images/menu-toggler--active.svg);
     }
@@ -40,7 +40,7 @@
     display: none;
     flex-basis: 100%;
 
-    &--active {
+    &--is-active {
       @extend .header__menu;
       display: block;
       margin-top: vr(ms(0));
