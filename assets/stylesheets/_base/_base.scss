@@ -3,6 +3,8 @@ html {
 }
 
 body {
+  background-color: palette(white);
+  color: palette(beige, extra-dark);
   font-family: font-stack(primary);
 }
 
@@ -29,9 +31,12 @@ h2 {
 }
 
 h3 {
+  color: palette(black);
   font-size: ms(-1);
   font-weight: 600;
+  letter-spacing: 0.125em;
   line-height: vr(ms(-1));
+  text-transform: uppercase;
 }
 
 p:last-child,
@@ -59,6 +64,11 @@ strong {
 }
 
 a {
+  color: palette(accent);
   font-weight: 500;
   text-decoration: underline;
+
+  &:hover {
+    color: palette(black);
+  }
 }

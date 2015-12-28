@@ -1,4 +1,48 @@
 .footer {
   background-color: palette(white);
   padding: vr(ms(0));
+
+  &__header {
+    text-align: center;
+
+    &:after {
+      background-color: palette(accent);
+      content: '';
+      display: block;
+      height: vr(ms(0), 1/8);
+      margin: vr(ms(0)) auto 0 auto;
+      width: vr(ms(1));
+    }
+  }
+
+  &__content {
+    margin-bottom: vr(ms(0));
+    text-align: center;
+  }
+
+  &__fine-print {
+    align-items: center;
+    display: flex;
+
+    &__copyright {
+      flex-grow: 1;
+    }
+
+    &__social {
+      display: flex;
+      flex-grow: 0;
+      font-size: ms(1);
+      line-height: vr(ms(1));
+
+      &__icon {
+        color: palette(beige, extra-dark);
+          margin-right: vr(ms(0), 1/2);
+
+        &--last {
+          @extend .footer__fine-print__social__icon;
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }

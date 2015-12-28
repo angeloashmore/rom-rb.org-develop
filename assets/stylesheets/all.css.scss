@@ -1,11 +1,14 @@
 // Global imports
 @import '~breakpoint-slicer';
-@import '~susy';
-@import '~modularscale-sass';
 @import '~flask';
+@import '~modularscale-sass';
+@import '~susy';
 
 // Libraries
 @import '_lib/**/*';
+
+// Mixins
+@import '_mixins/**/*';
 
 // Config
 @import '_config/**/*';

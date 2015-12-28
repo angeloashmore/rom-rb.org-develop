@@ -14,13 +14,14 @@
     width: vr(ms(1), 96/32);
 
     &__link {
+      @include no-text;
       display: block;
       height: 100%;
-      text-indent: -1000px;
     }
   }
 
   &__menu-toggler {
+    @include no-text;
     background-image: url(/images/menu-toggler.svg);
     background-position: right center;
     background-repeat: no-repeat;
@@ -28,7 +29,6 @@
     display: block;
     height: vr(ms(0));
     width: vr(ms(0), 25/22);
-    text-indent: -1000px;
 
     &--active {
       @extend .header__menu-toggler;
