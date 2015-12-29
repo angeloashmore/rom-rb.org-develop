@@ -2,6 +2,16 @@
   background-color: palette(white);
   padding: vr(ms(0));
 
+  &__content {
+    margin-bottom: vr(ms(0));
+    padding-bottom: vr(ms(0));
+    padding-top: vr(ms(0));
+    text-align: center;
+    @include from(2) {
+      @include pad(1);
+    }
+  }
+
   &__header {
     text-align: center;
 
@@ -15,18 +25,10 @@
     }
   }
 
-  &__content {
-    margin-bottom: vr(ms(0));
-    text-align: center;
-  }
-
   &__fine-print {
     align-items: center;
     display: flex;
-
-    &__copyright {
-      flex-grow: 1;
-    }
+    justify-content: space-between;
 
     &__social {
       display: flex;
@@ -36,7 +38,7 @@
 
       &__icon {
         color: palette(beige, extra-dark);
-          margin-right: vr(ms(0), 1/2);
+          margin-right: vr(ms(0));
 
         &--last {
           @extend .footer__fine-print__social__icon;

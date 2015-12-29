@@ -4,6 +4,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: vr(ms(0));
+  @include from(2) {
+    margin-bottom: vr(ms(0), 2);
+  }
 
   &__logo {
     background-image: url(/images/logo--small.svg);
@@ -12,6 +15,10 @@
     background-size: auto 100%;
     height: vr(ms(1));
     width: vr(ms(1), 96/32);
+    @include from(2) {
+      background-image: url(/images/logo.svg);
+      width: vr(ms(1), 270/32);
+    }
 
     &__link {
       @include no-text;
@@ -29,6 +36,9 @@
     display: block;
     height: vr(ms(0));
     width: vr(ms(0), 25/22);
+    @include from(2) {
+      display: none;
+    }
 
     &--is-active {
       @extend .header__menu-toggler;
@@ -39,11 +49,18 @@
   &__menu {
     display: none;
     flex-basis: 100%;
+    @include from(2) {
+      display: block;
+      flex-basis: auto;
+    }
 
     &--is-active {
       @extend .header__menu;
       display: block;
       margin-top: vr(ms(0));
+      @include from(2) {
+        margin-top: 0;
+      }
     }
   }
 }

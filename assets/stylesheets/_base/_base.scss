@@ -1,5 +1,9 @@
 html {
   @include vr-baseline(ms(0), ms(1));
+  @include from(2) {
+    font-size: 115%;
+    line-height: vr(ms(0), 1.15);
+  }
 }
 
 body {
@@ -19,12 +23,14 @@ ol{
 }
 
 h1 {
+  color: palette(black);
   font-size: ms(2);
   font-weight: 500;
   line-height: vr(ms(2));
 }
 
 h2 {
+  color: palette(black);
   font-size: ms(1);
   font-weight: 500;
   line-height: vr(ms(1));

@@ -1,0 +1,14 @@
+.button {
+  background-color: palette(accent);
+  border-radius: 10em;
+  color: palette(white);
+  display: inline-block;
+  padding: vr(ms(0), 0.5) vr(ms(0));
+  text-decoration: none;
+
+  &--secondary {
+    @extend .button;
+    background-color: palette(white);
+    color: palette(accent);
+  }
+}

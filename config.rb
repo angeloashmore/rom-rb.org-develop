@@ -13,6 +13,10 @@ helpers do
     options[:class] << '--is-active' if is_active
     link_to(link_text, url, options)
   end
+
+  def copyright
+    "&copy; 2014-#{Time.now.year} Ruby Object Mapper"
+  end
 end
 
 # General configuration
