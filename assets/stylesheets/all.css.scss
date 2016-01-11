@@ -2,17 +2,20 @@
 @import '~breakpoint-sass';
 @import '~breakpoint-slicer';
 @import '~flask';
-@import '~modularscale-sass';
 @import '~susy';
 
-// Libraries
-@import '_lib/**/*';
+// Config
+@import '_config/**/*';
+
+// Functions
+@import '_functions/**/*';
 
 // Mixins
 @import '_mixins/**/*';
 
-// Config
-@import '_config/**/*';
+// Libraries
+@import '_lib/_vertical-rhythms';
+@import '_lib/**/*';
 
 // Base
 @import '_base/**/*';

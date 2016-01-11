@@ -1,15 +1,12 @@
 .footer {
   background-color: palette(white);
-  padding: vr(ms(0));
+  padding: rhythm(1);
 
   &__content {
-    margin-bottom: vr(ms(0));
-    padding-bottom: vr(ms(0));
-    padding-top: vr(ms(0));
+    @include margin-trailer(1);
+    @include padding-leader(1);
+    @include padding-trailer(1)
     text-align: center;
-    @include from(2) {
-      @include pad(1);
-    }
   }
 
   &__header {
@@ -19,9 +16,9 @@
       background-color: palette(accent);
       content: '';
       display: block;
-      height: vr(ms(0), 1/8);
-      margin: vr(ms(0)) auto 0 auto;
-      width: vr(ms(1));
+      height: rhythm(0.2);
+      margin: rhythm(1) auto 0 auto;
+      width: rhythm(1.5);
     }
   }
 
@@ -31,14 +28,13 @@
     justify-content: space-between;
 
     &__social {
+      @include type-scale(large);
       display: flex;
       flex-grow: 0;
-      font-size: ms(1);
-      line-height: vr(ms(1));
 
       &__icon {
         color: palette(beige, extra-dark);
-          margin-right: vr(ms(0));
+        margin-right: rhythm(1);
 
         &--last {
           @extend .footer__fine-print__social__icon;

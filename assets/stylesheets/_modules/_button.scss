@@ -1,11 +1,17 @@
 .button {
+  @include type-weight(medium);
   background-color: palette(accent);
   border-radius: 10em;
   color: palette(white);
   display: inline-block;
-  font-weight: 500;
-  padding: vr(ms(0), 0.5) vr(ms(0));
+  letter-spacing: 0.05em;
+  padding: rhythm(0.3) rhythm(1.5);
   text-decoration: none;
+
+  &:hover {
+    background-color: palette(accent, dark);
+    color: palette(white);
+  }
 
   &--secondary {
     @extend .button;

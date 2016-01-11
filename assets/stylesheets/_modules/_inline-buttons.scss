@@ -2,9 +2,8 @@
   margin-left: 0;
 
   &__button {
-    display: inline-block;
+    @include margin-trailer(0.5);
     list-style: none;
-    margin-right: vr(ms(0));
 
     &--last {
       @extend .inline-buttons__button;

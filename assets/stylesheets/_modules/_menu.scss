@@ -1,34 +1,33 @@
 .menu {
   &__items {
     margin-left: 0;
-    @include from(2) {
+    @include from(3) {
       display: flex;
     }
   }
 
   &__item {
     list-style: none;
-    @include at(1) {
+    @include to(3) {
       border-bottom: 1px solid palette(beige, semidark);
 
       &:first-child {
         border-top: 1px solid palette(beige, semidark);
       }
     }
-    @include from(2) {
-      margin-right: vr(ms(0), 0.75);
+    @include from(3) {
+      margin-right: rhythm(0.75)
     }
 
     &__link {
-      font-size: ms(-1);
+      @include type-scale(small);
+      @include type-weight(semi-bold);
       display: block;
-      font-weight: 600;
-      line-height: vr(ms(-1));
       text-decoration: none;
       text-transform: uppercase;
-      @include at(1) {
-        padding-bottom: vr(ms(0), 0.25);
-        padding-top: vr(ms(0), 0.25);
+      @include to(3) {
+        @include padding-leader(0.25);
+        @include padding-trailer(0.25);
       }
 
       &--is-active {
