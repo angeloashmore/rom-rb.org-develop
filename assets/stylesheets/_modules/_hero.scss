@@ -2,6 +2,9 @@
   @include type-scale(medium);
   @include padding-leader(1);
   text-align: center;
+  @include from(3) {
+    @include pad(2);
+  }
 
   &__logo {
     @include margin-trailer(2);

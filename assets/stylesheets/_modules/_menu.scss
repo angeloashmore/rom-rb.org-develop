@@ -19,6 +19,13 @@
       margin-right: rhythm(0.75)
     }
 
+    &--last {
+      @extend .menu__item;
+      @include from(3) {
+        margin-right: 0;
+      }
+    }
+
     &__link {
       @include type-weight(semi-bold);
       display: block;
@@ -26,6 +33,9 @@
       text-transform: uppercase;
       @include to(3) {
         @include rhythm-padding(0.5);
+      }
+      @include from(3) {
+        @include type-scale(xsmall, false);
       }
 
       &--is-active {

@@ -7,6 +7,9 @@
     @include padding-leader(1);
     @include padding-trailer(1)
     text-align: center;
+    @include from(3) {
+      @include pad(1);
+    }
   }
 
   &__header {

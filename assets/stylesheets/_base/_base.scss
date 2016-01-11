@@ -36,7 +36,7 @@ h2 {
 }
 
 h3 {
-  @include type-scale(small);
+  @include type-scale(base);
   @include type-weight(semi-bold);
   color: palette(black);
   letter-spacing: 0.125em;
@@ -60,6 +60,9 @@ li {
 
 small {
   @include type-scale(small);
+  @include from(3) {
+    @include type-scale(xsmall, false);
+  }
 }
 
 strong {

@@ -16,6 +16,10 @@
       background-image: url(/images/logo.svg);
       width: rhythm(1.42) * 270/32;
     }
+    @include from(3) {
+      height: rhythm(1);
+      width: rhythm(1) * 270/32;
+    }
 
     &__link {
       @include no-text;
