@@ -1,0 +1,14 @@
+.inline-buttons {
+  margin-left: 0;
+
+  &__button {
+    display: inline-block;
+    list-style: none;
+    margin-right: vr(ms(0));
+
+    &--last {
+      @extend .inline-buttons__button;
+      margin-right: 0;
+    }
+  }
+}

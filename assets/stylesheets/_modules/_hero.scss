@@ -2,7 +2,20 @@
   text-align: center;
 
   &__logo {
-    margin-bottom: vr(ms(0));
+    @include span(10);
+    @include pad(1);
+    margin-bottom: vr(ms(0), 2);
     margin-top: vr(ms(0));
+  }
+
+  &__buttons {
+    margin-top: vr(ms(0), 2);
+    margin-bottom: vr(ms(0), 2);
+  }
+
+  &__announcement {
+    color: palette(black);
+    font-weight: 500;
+    text-decoration: none;
   }
 }
