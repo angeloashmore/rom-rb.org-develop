@@ -1,12 +1,14 @@
 .button {
-  @include type-weight(medium);
+  @include type-scale(base);
+  @include type-weight(semi-bold);
   background-color: palette(accent);
-  border-radius: 10em;
+  border-radius: 0.5em;
   color: palette(white);
-  display: inline-block;
-  letter-spacing: 0.05em;
-  padding: rhythm(0.3) rhythm(1.5);
+  display: block;
+  letter-spacing: 0.15em;
+  padding: rhythm(0.6) rhythm(1);
   text-decoration: none;
+  text-transform: uppercase;
 
   &:hover {
     background-color: palette(accent, dark);
@@ -17,5 +19,10 @@
     @extend .button;
     background-color: palette(white);
     color: palette(accent);
+
+    &:hover {
+      background-color: palette(white);
+      color: palette(accent, dark);
+    }
   }
 }

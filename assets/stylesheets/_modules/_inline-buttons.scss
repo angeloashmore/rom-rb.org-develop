@@ -2,7 +2,8 @@
   margin-left: 0;
 
   &__button {
-    @include margin-trailer(0.5);
+    @include pad(1);
+    @include margin-trailer(0.75);
     list-style: none;
 
     &--last {

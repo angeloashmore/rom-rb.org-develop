@@ -72,6 +72,6 @@ a {
   text-decoration: underline;
 
   &:hover {
-    color: palette(black);
+    color: palette(accent, dark);
   }
 }

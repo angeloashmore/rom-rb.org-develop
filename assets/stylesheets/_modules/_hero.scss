@@ -4,7 +4,7 @@
   text-align: center;
 
   &__logo {
-    @include margin-trailer(1);
+    @include margin-trailer(2);
 
     &__image {
       max-width: 60%;
@@ -14,6 +14,11 @@
 
   &__intro {
     @include margin-trailer(2);
+
+    &__name {
+      @include type-weight(medium);
+      letter-spacing: -0.025em;
+    }
   }
 
   &__buttons {

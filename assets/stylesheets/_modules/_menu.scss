@@ -20,14 +20,12 @@
     }
 
     &__link {
-      @include type-scale(small);
       @include type-weight(semi-bold);
       display: block;
       text-decoration: none;
       text-transform: uppercase;
       @include to(3) {
-        @include padding-leader(0.25);
-        @include padding-trailer(0.25);
+        @include rhythm-padding(0.5);
       }
 
       &--is-active {
