@@ -13,7 +13,16 @@ html
         = partial 'layouts/header'
         .page__sidebar
           .sidebar
-            h4 Sidebar
+            h2.sidebar__header Guides
+            ul.sidebar__items
+              li.sidebar__item
+                = link_to 'Introduction', '#', class: 'sidebar__link'
+                ul.sidebar__sub-items
+                  li.sidebar__sub-item= link_to 'Philosophy', '#', class: 'sidebar__sub-link'
+                  li.sidebar__sub-item= link_to 'Why ROM?', '#', class: 'sidebar__sub-link'
+                  li.sidebar__sub-item= link_to 'Active Record and ROM', '#', class: 'sidebar__sub-link'
+              li.sidebar__item= link_to 'Getting Started', '#', class: 'sidebar__link'
+              li.sidebar__item= link_to 'Setup', '#', class: 'sidebar__link'
         .page__content
           .content
             = yield

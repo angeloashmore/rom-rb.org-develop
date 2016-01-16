@@ -1,2 +1,49 @@
 .sidebar {
+  @include type-scale(small);
+  @include margin-trailer(1);
+  @include from(3) {
+    @include padding-leader(1.5);
+  }
+
+  &__header {
+    @include margin-trailer(0.5);
+  }
+
+  &__items {
+    margin-left: 0;
+  }
+
+  &__item {
+    @include margin-trailer(0.25);
+    display: block;
+  }
+
+  &__link {
+    @include type-weight(medium);
+    display: block;
+    text-decoration: none;
+
+    &--is-active {
+      @extend .sidebar__link;
+      color: palette(black);
+    }
+  }
+
+  &__sub-items {
+    margin-left: rhythm(0.75);
+  }
+
+  &__sub-item {
+    @extend .sidebar__item;
+    @include margin-trailer(0);
+  }
+
+  &__sub-link {
+    @extend .sidebar__link;
+    @include type-weight(normal);
+
+    &--is-active {
+      @extend .sidebar__link--is-active;
+    }
+  }
 }
