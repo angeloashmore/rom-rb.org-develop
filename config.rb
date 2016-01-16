@@ -32,10 +32,6 @@ activate :external_pipeline,
   command: build? ? './node_modules/webpack/bin/webpack.js --bail' : './node_modules/webpack/bin/webpack.js --watch -d',
   source: '.tmp/dist',
   latency: 1
-activate :deploy do |deploy|
-  deploy.deploy_method = :git
-  deploy.build_before = true
-end
 
 # Development-specific configuration
 configure :development do
