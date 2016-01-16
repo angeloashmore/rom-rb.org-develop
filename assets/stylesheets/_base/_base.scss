@@ -3,7 +3,7 @@
 
 html {
   @include from(3) {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -42,6 +42,15 @@ h3 {
   letter-spacing: 0.125em;
   text-transform: uppercase;
 }
+
+h4 {
+  @include type-scale(small);
+  @include type-weight(semi-bold);
+  color: palette(black);
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+
 
 p:last-child,
 ul:last-child,

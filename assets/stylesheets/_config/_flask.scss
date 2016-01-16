@@ -40,6 +40,10 @@ $fonts: (
   open-sans: (
     font-type: sans-serif,
     regular: 'Work Sans'
+  ),
+  menlo: (
+    font-type: monospace,
+    regular: Menlo
   )
 );
 
@@ -49,9 +53,13 @@ $font-fallbacks: (
     Helvetica,
     Arial,
     sans-serif
+  ),
+  monospace: (
+    monospace
   )
 );
 
 $font-aliases: (
-  primary: open-sans
+  primary: open-sans,
+  monospace: menlo
 );

@@ -22,7 +22,11 @@ end
 # General configuration
 set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
+set :markdown_engine, :redcarpet
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true,
+    :fenced_code_blocks => true
 
+activate :syntax, css_class: 'syntax'
 activate :external_pipeline,
   name: :webpack,
   command: build? ? './node_modules/webpack/bin/webpack.js --bail' : './node_modules/webpack/bin/webpack.js --watch -d',

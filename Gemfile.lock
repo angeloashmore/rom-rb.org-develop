@@ -77,6 +77,9 @@ GEM
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
       rack-livereload (~> 0.3.15)
+    middleman-syntax (2.1.0)
+      middleman-core (>= 3.2)
+      rouge (~> 1.0)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2015.1120)
@@ -98,6 +101,8 @@ GEM
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    redcarpet (3.3.4)
+    rouge (1.10.1)
     sass (3.4.20)
     slim (3.0.6)
       temple (~> 0.7.3)
@@ -120,6 +125,8 @@ PLATFORMS
 DEPENDENCIES
   middleman (>= 4.0.0)
   middleman-livereload
+  middleman-syntax
+  redcarpet
   slim
   tzinfo-data
   wdm (~> 0.1.0)

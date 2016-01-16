@@ -35,7 +35,7 @@
         @include rhythm-padding(0.5);
       }
       @include from(3) {
-        @include type-scale(xsmall, false);
+        @include type-scale(small, false);
       }
 
       &--is-active {

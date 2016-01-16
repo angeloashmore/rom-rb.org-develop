@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"]
+    meta[name="viewport" content="initial-scale=1"]
+    title ROM
+    = stylesheet_link_tag :all
+    = javascript_include_tag :all
+  body[class=page_classes]
+    .page
+      .grid
+        = partial 'layouts/header'
+        .page__sidebar
+          .sidebar
+            h4 Sidebar
+        .page__content
+          .content
+            = yield
+    .footer
+      .grid
+        = partial 'layouts/footer'

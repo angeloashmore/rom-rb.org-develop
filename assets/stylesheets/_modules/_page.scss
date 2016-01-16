@@ -2,4 +2,20 @@
   background-color: palette(beige);
   padding: rhythm(1);
   padding-bottom: rhythm(2);
+
+  &__sidebar {
+    @include from(3) {
+      @include span(3 no-gutters);
+    }
+  }
+
+  &__content {
+    margin-left: - rhythm(1);
+    margin-right: - rhythm(1);
+    @include from(3) {
+      @include span(9 no-gutters);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
