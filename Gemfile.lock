@@ -73,6 +73,10 @@ GEM
       sass (>= 3.4)
       tilt (~> 1.4.1)
       uglifier (~> 2.6)
+    middleman-deploy (1.0.0)
+      middleman-core (>= 3.2)
+      net-sftp
+      ptools
     middleman-livereload (3.4.5)
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
@@ -85,6 +89,9 @@ GEM
     mime-types-data (3.2015.1120)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (3.0.1)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     padrino-helpers (0.13.0)
@@ -93,6 +100,7 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.13.0)
       activesupport (>= 3.1)
+    ptools (1.3.3)
     rack (1.6.4)
     rack-livereload (0.3.16)
       rack
@@ -124,6 +132,7 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (>= 4.0.0)
+  middleman-deploy
   middleman-livereload
   middleman-syntax
   redcarpet
