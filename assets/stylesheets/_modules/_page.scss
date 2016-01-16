@@ -6,6 +6,7 @@
   &__sidebar {
     @include from(3) {
       @include span(3 no-gutters);
+      padding-right: rhythm(1);
     }
   }
 

@@ -22,7 +22,16 @@ html
                   li.sidebar__sub-item= link_to 'Why ROM?', '#', class: 'sidebar__sub-link'
                   li.sidebar__sub-item= link_to 'Active Record and ROM', '#', class: 'sidebar__sub-link'
               li.sidebar__item= link_to 'Getting Started', '#', class: 'sidebar__link'
-              li.sidebar__item= link_to 'Setup', '#', class: 'sidebar__link'
+              li.sidebar__item
+                = link_to 'Setup', '#', class: 'sidebar__link'
+                ul.sidebar__sub-items
+                  li.sidebar__sub-item= link_to 'Block Style', '#', class: 'sidebar__sub-link'
+                  li.sidebar__sub-item= link_to 'Rails', '#', class: 'sidebar__sub-link'
+              li.sidebar__item= link_to 'Reading', '#', class: 'sidebar__link'
+              li.sidebar__item= link_to 'Writing', '#', class: 'sidebar__link'
+              li.sidebar__item= link_to 'Adapters', '#', class: 'sidebar__link'
+              li.sidebar__item= link_to 'Flat Style Setup', '#', class: 'sidebar__link'
+              li.sidebar__item= link_to 'Glossary', '#', class: 'sidebar__link'
         .page__content
           .content
             = yield
