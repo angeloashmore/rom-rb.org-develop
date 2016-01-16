@@ -14,4 +14,16 @@
     @include margin-trailer(1);
     display: block;
   }
+
+  hr {
+    @include pre(2);
+    @include post(2);
+    @include margin-leader(2);
+    @include margin-trailer(2);
+    background-color: palette(beige);
+    border: 0;
+    color: palette(beige);
+    display: block;
+    height: 0.2rem;
+  }
 }
