@@ -16,6 +16,11 @@
   &__item {
     @include margin-trailer(0.25);
     display: block;
+
+    &__icon {
+      display: inline-block;
+      width: rhythm(0.75);
+    }
   }
 
   &__link {

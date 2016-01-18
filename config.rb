@@ -2,6 +2,8 @@
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+page '/learn/*', layout: 'content', data: { sidebar: 'learn/sidebar' }
+proxy '/learn/index.html', '/learn/introduction/index.html'
 
 # Helpers
 helpers do
@@ -26,6 +28,7 @@ set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true,
     :fenced_code_blocks => true
 
+activate :directory_indexes
 activate :syntax, css_class: 'syntax'
 activate :external_pipeline,
   name: :webpack,

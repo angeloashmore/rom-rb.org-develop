@@ -8,6 +8,12 @@
       @include span(3 no-gutters);
       padding-right: rhythm(1);
     }
+
+    & + .page__content {
+      @include from(3) {
+        float: left;
+      }
+    }
   }
 
   &__content {
@@ -15,8 +21,9 @@
     margin-right: - rhythm(1);
     @include from(3) {
       @include span(9 no-gutters);
-      margin-left: 0;
-      margin-right: 0;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }

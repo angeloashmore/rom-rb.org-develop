@@ -1,0 +1,19 @@
+h2.sidebar__header Learn
+ul.sidebar__items
+  li.sidebar__item
+    = nav_link_to 'Introduction', '/learn/introduction', class: 'sidebar__link'
+    ul.sidebar__sub-items
+      li.sidebar__sub-item= nav_link_to 'Philosophy', '/learn/introduction/philosophy', class: 'sidebar__sub-link'
+      li.sidebar__sub-item= nav_link_to 'Why ROM?', '/learn/introduction/why', class: 'sidebar__sub-link'
+      li.sidebar__sub-item= nav_link_to 'Active Record and ROM', '/learn/introduction/active-record', class: 'sidebar__sub-link'
+  li.sidebar__item= nav_link_to 'Getting Started', '#', class: 'sidebar__link'
+  li.sidebar__item
+    = nav_link_to 'Setup', '#', class: 'sidebar__link'
+    ul.sidebar__sub-items
+      li.sidebar__sub-item= nav_link_to 'Block Style', '#', class: 'sidebar__sub-link'
+      li.sidebar__sub-item= nav_link_to 'Rails', '#', class: 'sidebar__sub-link'
+  li.sidebar__item= nav_link_to 'Reading', '#', class: 'sidebar__link'
+  li.sidebar__item= nav_link_to 'Writing', '#', class: 'sidebar__link'
+  li.sidebar__item= nav_link_to 'Adapters', '#', class: 'sidebar__link'
+  li.sidebar__item= nav_link_to 'Flat Style Setup', '#', class: 'sidebar__link'
+  li.sidebar__item= nav_link_to 'Glossary', '#', class: 'sidebar__link'
