@@ -34,6 +34,7 @@ set :js_dir, 'assets/javascripts'
 set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true,
     :fenced_code_blocks => true
+set :disqus_embed_url, 'https://rom-rb-blog.disqus.com/embed.js'
 set :authors_twitter_urls, {
   'Don Morrison' => 'https://twitter.com/elskwid',
   'Piotr Solnica' => 'https://twitter.com/_solnic_',
