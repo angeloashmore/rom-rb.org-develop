@@ -3,10 +3,18 @@
   @include margin-trailer(1);
   @include from(3) {
     @include padding-leader(1.5);
+    margin-top: 0.5rem;
   }
 
   &__header {
     @include margin-trailer(0.5);
+    letter-spacing: 0;
+    text-transform: none;
+
+    &--first {
+      @extend .sidebar__header;
+      @include margin-trailer(1);
+    }
   }
 
   &__items {

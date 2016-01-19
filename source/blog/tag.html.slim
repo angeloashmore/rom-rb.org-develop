@@ -1,0 +1,6 @@
+---
+layout: content
+---
+
+h1= "Posts for #{tagname}"
+= partial 'blog/article', collection: articles, locals: { link: true, summary: true, subheading: true }

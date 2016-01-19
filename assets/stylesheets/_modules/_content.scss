@@ -26,4 +26,29 @@
     display: block;
     height: 0.2rem;
   }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    th {
+      @include type-weight(semi-bold);
+      border-bottom: 0.25rem solid palette(beige, dark);
+      margin: 0;
+      padding: rhythm(0.25) rhythm(0.5);
+      text-align: left;
+    }
+
+    tr {
+      &:nth-child(2n) {
+        background-color: palette(beige);
+      }
+    }
+
+    td {
+      margin: 0;
+      padding: rhythm(0.25) rhythm(0.5);
+    }
+  }
 }
