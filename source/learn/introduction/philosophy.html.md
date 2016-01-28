@@ -1,3 +1,5 @@
+#### Introduction
+
 # Philosophy
 
 * Simple is best
