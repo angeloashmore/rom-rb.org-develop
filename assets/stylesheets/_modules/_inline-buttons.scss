@@ -2,13 +2,29 @@
   margin-left: 0;
 
   &__button {
-    @include pad(1);
-    @include margin-trailer(0.75);
+    display: inline-block;
     list-style: none;
+    margin-right: rhythm(0.5);
 
     &--last {
       @extend .inline-buttons__button;
       margin-right: 0;
+    }
+  }
+
+  &--stacked {
+    @extend .inline-buttons;
+
+    &__button {
+      @extend .inline-buttons__button;
+      @include margin-trailer(0.75);
+      display: block;
+      margin-right: 0;
+
+      &--last {
+        @extend .inline-buttons--stacked__button;
+        @include margin-trailer(0);
+      }
     }
   }
 }

@@ -26,6 +26,10 @@
 
   &__buttons {
     @include margin-trailer(2);
+    @include pad(1);
+    @include from(3) {
+      @include pad(2);
+    }
   }
 
   &__announcement {
