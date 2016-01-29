@@ -8,7 +8,7 @@ article.article
 
   .article__metadata
     | Posted by
-    =<> link_to article.data.author, authors_twitter_url(article.data.author)
+    =<> link_to article.data.author, data.authors[article.data.author].url
     | on
     =<> I18n.l(article.date.to_date, format: :long)
     | under

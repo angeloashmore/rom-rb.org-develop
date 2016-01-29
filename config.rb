@@ -21,10 +21,6 @@ helpers do
   def copyright
     "&copy; 2014-#{Time.now.year} Ruby Object Mapper"
   end
-
-  def authors_twitter_url(author)
-    config.authors_twitter_urls[author]
-  end
 end
 
 # General configuration
@@ -35,41 +31,12 @@ set :markdown_engine, :redcarpet
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true,
     :fenced_code_blocks => true
 set :disqus_embed_url, 'https://rom-rb-blog.disqus.com/embed.js'
-set :authors_twitter_urls, {
-  'Don Morrison' => 'https://twitter.com/elskwid',
-  'Piotr Solnica' => 'https://twitter.com/_solnic_',
-  'Mark Rickerby' => 'https://twitter.com/maetl'
-}
-set :projects, %w[
-  rom
-  rom-cassandra
-  rom-couchdb
-  rom-csv
-  rom-dm
-  rom-event_store
-  rom-git
-  rom-http
-  rom-influxdb
-  rom-json
-  rom-kafka
-  rom-lotus
-  rom-mongo
-  rom-neo4j
-  rom-rails
-  rom-redis
-  rom-rethinkdb
-  rom-roda
-  rom-sql
-  rom-yaml
-  rom-yesql
-]
 
 activate :blog,
   prefix: 'blog',
   layout: 'blog_article',
   permalink: '{title}.html',
   paginate: true,
-  per_page: 2,
   tag_template: 'blog/tag.html'
 activate :syntax, css_class: 'syntax'
 activate :directory_indexes
@@ -82,9 +49,4 @@ activate :external_pipeline,
 # Development-specific configuration
 configure :development do
   activate :livereload
-end
-
-# Build-specific configuration
-configure :build do
-  ignore { |path| path =~ /\.scss$/ }
 end
