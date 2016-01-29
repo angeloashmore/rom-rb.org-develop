@@ -1,3 +1,7 @@
+---
+title: Contribute
+---
+
 # Contribute
 
 As ROM continues to grow, we’re always looking for more people to contribute in many ways.

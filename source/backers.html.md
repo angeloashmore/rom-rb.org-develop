@@ -1,3 +1,7 @@
+---
+title: Backers
+---
+
 # Sponsors
 
 We are still looking for sustainable sponsorship. If your company is relying on

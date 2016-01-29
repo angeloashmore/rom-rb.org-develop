@@ -1,3 +1,7 @@
+---
+title: Philosophy
+---
+
 #### Introduction
 
 # Philosophy

@@ -1,3 +1,7 @@
+---
+title: Introduction
+---
+
 # Introduction
 
 Ruby Object Mapper (ROM) is a Ruby persistence library with the goal to provide

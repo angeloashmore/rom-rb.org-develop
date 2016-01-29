@@ -18,6 +18,10 @@ helpers do
     link_to(link_text, url, options)
   end
 
+  def head_title
+    current_page.data.title.nil? ? 'ROM' : "ROM - #{current_page.data.title}"
+  end
+
   def copyright
     "&copy; 2014-#{Time.now.year} Ruby Object Mapper"
   end
