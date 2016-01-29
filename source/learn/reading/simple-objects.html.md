@@ -179,9 +179,7 @@ repository.user_by_id(1)
 Repositories can map relations to your custom objects. As a general best-practice
 every public repository method should return materialized, domain objects.
 
-<aside class="well">
-You can use any object type where constructor accepts a hash with attributes.
-</aside>
+> You can use any object type where constructor accepts a hash with attributes.
 
 ### Using With dry-data
 
