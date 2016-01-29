@@ -1,6 +1,9 @@
 ---
-layout: content
+pageable: true
+per_page: 5
 ---
 
 h1= "Posts for #{tagname}"
-= partial 'blog/article', collection: articles, locals: { link: true, summary: true, subheading: true }
+
+= partial 'blog/article', collection: page_articles, locals: { link: true, summary: true, subheading: true }
+= partial 'blog/pagination', locals: { prev_page: prev_page, next_page: next_page, page_number: page_number, num_pages: num_pages }

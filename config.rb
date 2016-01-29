@@ -69,6 +69,7 @@ activate :blog,
   layout: 'blog_article',
   permalink: '{title}.html',
   paginate: true,
+  per_page: 2,
   tag_template: 'blog/tag.html'
 activate :syntax, css_class: 'syntax'
 activate :directory_indexes

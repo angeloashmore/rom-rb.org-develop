@@ -39,6 +39,10 @@
         color: palette(beige, extra-dark);
         margin-right: rhythm(1);
 
+        &:hover {
+          color: palette(black);
+        }
+
         &--last {
           @extend .footer__fine-print__social__icon;
           margin-right: 0;

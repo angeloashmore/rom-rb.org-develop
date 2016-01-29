@@ -35,4 +35,14 @@
       color: palette(accent, dark);
     }
   }
+
+  &--disabled {
+    @extend .button;
+    background-color: palette(beige);
+    color: palette(beige, dark);
+
+    &:hover {
+      @extend .button--disabled;
+    }
+  }
 }
