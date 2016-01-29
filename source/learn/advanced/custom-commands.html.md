@@ -1,6 +1,12 @@
-#Advanced - Custom Commands
+---
+title: Custom Commands
+chapter: Advanced Topics
+---
 
-There are some adapters that add base commands, but you can also define your own. 
+# Custom Commands
+
+There are some adapters that add base commands, but you can also define your
+own.
 
 ```ruby
 class UpsertUser < ROM::Commands::Create[:memory]

@@ -1,4 +1,9 @@
-## How To Build a ROM Adapter
+---
+title: How to Build a ROM Adapter
+chapter: Adapters
+---
+
+# How To Build a ROM Adapter
 
 ROM makes very little assumptions about its adapters that's why it is simple to
 build a custom adapter that will provide access to a specific datasource.
@@ -6,7 +11,8 @@ build a custom adapter that will provide access to a specific datasource.
 A ROM adapter must provide the following components:
 
 * `ROM::Gateway` subclass that implements required interface
-* `ROM::Relation` subclass that exposes adapter-specific interface for queries and writing
+* `ROM::Relation` subclass that exposes adapter-specific interface for queries
+  and writing
 
 In addition to that the adapter *may* also provide:
 
@@ -16,10 +22,11 @@ In addition to that the adapter *may* also provide:
 
 Let's build an adapter for a plain Ruby array, because why not.
 
-### Gateway
+## Gateway
 
-Adapter's gateway is used by ROM to retrieve datasets and inject them into adapter's
-relations as their data-access backends. Here's a simple implementation:
+Adapter's gateway is used by ROM to retrieve datasets and inject them into
+adapter's relations as their data-access backends. Here's a simple
+implementation:
 
 ``` ruby
 require 'rom'
@@ -55,7 +62,7 @@ gateway.dataset?(:tasks) # true
 
 This allows ROM to ask for specific datasets from your gateway.
 
-### Relation
+## Relation
 
 Adapter-specific relation must exist because it can provide various features
 that only make sense for a concrete adapter. It can automatically forward method
@@ -93,10 +100,10 @@ Please remember about setting `adapter` identifier - it is used by ROM to infer
 component types specific to a given adapter. It's essential during the setup.
 </aside>
 
-### Registering Your Adapter
+## Registering Your Adapter
 
-The adapter must register itself under specific identifier which then can be used
-to set up ROM components for that particular adapter.
+The adapter must register itself under specific identifier which then can be
+used to set up ROM components for that particular adapter.
 
 To register your adapter:
 
@@ -128,7 +135,7 @@ rom.relations[:users].by_name('Jane').to_a
 # [{:name=>"Jane"}]
 ```
 
-### Commands
+## Commands
 
 Adapter commands are optional because you don't always want to change data in a
 given datastore. If your datastore supports create/update/delete operations you
@@ -138,7 +145,8 @@ ROM adheres to the CQRS but it doesn't enforce it, this means that relations do
 implement CRUD and commands are just thin wrappers around CUD and they depend on
 relations.
 
-By convention all command classes live under `ROM::YourAdapter::Commands` namespace.
+By convention all command classes live under `ROM::YourAdapter::Commands`
+namespace.
 
 ### Common Command Behavior
 
@@ -179,7 +187,7 @@ module ROM
 end
 ```
 
-### Commands::Create
+#### Commands::Create
 
 To implement a create command:
 
@@ -210,7 +218,7 @@ puts users.to_a.inspect
 # [{:name=>"Jane"}]
 ```
 
-### Commands::Delete
+#### Commands::Delete
 
 To implement a delete command:
 
@@ -240,9 +248,10 @@ puts users.to_a.inspect
 ```
 
 Notice that here delete command yields tuples from its current `relation` but
-deletes it from the `source` relation, since this is our canonical source of data.
+deletes it from the `source` relation, since this is our canonical source of
+data.
 
-### Commands::Update
+#### Commands::Update
 
 To implement an update command:
 
@@ -271,7 +280,8 @@ puts users.to_a.inspect
 # [{:name=>"Jane", :age=>21}]
 ```
 
-Here we simply rely on `Hash#update` which mutates tuples using the input attributes.
+Here we simply rely on `Hash#update` which mutates tuples using the input
+attributes.
 
 ### Putting It All Together
 

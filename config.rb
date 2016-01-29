@@ -3,7 +3,7 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 page '/', layout: 'layout'
-page '/learn/*', data: { sidebar: 'learn/sidebar' }
+page '/learn/*', layout: 'guide', data: { sidebar: 'learn/sidebar' }
 page '/blog/*', data: { sidebar: 'blog/sidebar' }
 proxy '/learn/index.html', '/learn/introduction/index.html'
 

@@ -1,4 +1,9 @@
-# Advanced Topics
+---
+title: Advanced Topics
+chapter: Advanced Topics
+---
+
+# Overview
 
 * [Flat Style Setup](/learn/advanced/flat-style) - multi-file setup
 * [Combining Relation Results](/learn/advanced/combine)

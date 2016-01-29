@@ -1,7 +1,13 @@
+---
+title: Rails Setup
+chapter: Setup
+---
+
 # Rails Setup
 
-Rails integration is provided by [rom-rails](https://github.com/rom-rb/rom-rails)
-project. Simply add it to your Gemfile:
+Rails integration is provided by
+[rom-rails](https://github.com/rom-rb/rom-rails) project. Simply add it to your
+Gemfile:
 
 ``` ruby
 gem 'rom-rails'
@@ -66,17 +72,17 @@ In Rails environment ROM container is accessible via `ROM.container`:
 ROM.container # returns the container
 ```
 
-Accessing global container directly is considered as a bad practice. The recommended
-way is to use a DI mechanism to inject specific ROM components as dependencies
-into your objects.
+Accessing global container directly is considered as a bad practice. The
+recommended way is to use a DI mechanism to inject specific ROM components as
+dependencies into your objects.
 
 In example you can use [dry-container](https://github.com/dryrb/dry-container)
 and [dry-auto_inject](https://github.com/dryrb/dry-auto_inject) gems to define
 your own application container and specify dependencies there and have them
 automatically injected.
 
-See [rom-rails-skeleton](https://github.com/solnic/rom-rails-skeleton) for an example
-of such setup.
+See [rom-rails-skeleton](https://github.com/solnic/rom-rails-skeleton) for an
+example of such setup.
 
 ## Defining Relations
 

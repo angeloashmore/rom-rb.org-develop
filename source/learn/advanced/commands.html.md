@@ -1,8 +1,13 @@
+---
+title: Standalone Commands
+chapter: Advanced Topics
+---
+
 # Standalone Commands
 
-Writing records to a persistence solution is done through Commands. Commands are objects that encapsulate
-datastore-specific modification operations. They receive a relation and execute their operation using that
-relation.
+Writing records to a persistence solution is done through Commands. Commands are
+objects that encapsulate datastore-specific modification operations. They
+receive a relation and execute their operation using that relation.
 
 ROM adapters can provide three basic Command types:
 
@@ -10,11 +15,13 @@ ROM adapters can provide three basic Command types:
 * `ROM::Commands::Update`
 * `ROM::Commands::Delete`
 
-Some adapters provide more for special operations - see your adapter’s documentation for details.
+Some adapters provide more for special operations - see your adapter’s
+documentation for details.
 
 ## Defining Commands
 
-In your setup, define available commands with the `commands` statement, passing it a symbol of the relation's name:
+In your setup, define available commands with the `commands` statement, passing
+it a symbol of the relation's name:
 
 ```ruby
 require 'rom-repository'
@@ -35,10 +42,11 @@ ROM.container(:sql, 'sqlite::memory') do |rom|
 end
 ```
 
-#### Single Results vs Many Results
+### Single Results vs Many Results
 
-Ordinarily, a command will return an `Array` of `Hash` objects. You can customize
-this to return a single result by supplying `result :one` to the command definition.
+Ordinarily, a command will return an `Array` of `Hash` objects. You can
+customize this to return a single result by supplying `result :one` to the
+command definition.
 
 ```ruby
 ROM.container(:sql, 'sqlite::memory') do |rom|

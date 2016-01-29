@@ -1,6 +1,13 @@
-#Using `Relation#combine`
-Ordinarily, Relation is used through Repository, but some applications may use Relation directly. 
-This removes the layer of syntactic sugar provided by Repository, and so `#combine` must be handled directly.
+---
+title: Combining Relation Results
+chapter: Advanced Topics
+---
+
+# Combining Relation Results
+
+Ordinarily, Relation is used through Repository, but some applications may use
+Relation directly. This removes the layer of syntactic sugar provided by
+Repository, and so `#combine` must be handled directly.
 
 ```ruby
 class Users < ROM::Relation[:memory]
@@ -27,12 +34,12 @@ tasks = rom_container.relation(:tasks)
 users.by_name('Jane').combine(tasks.for_users)
 ```
 
-
 This is made possible by the auto-currying feature. 
 
-##Auto-Curry
-Every relation method that you defined supports auto-curry syntax. *Currying* means that you can reference a Relation 
-and provide method arguments later:
+## Auto-Curry
+
+Every relation method that you defined supports auto-curry syntax. *Currying*
+means that you can reference a Relation and provide method arguments later:
 
 ```ruby
 users_by_name = rom.relation(:users).by_name

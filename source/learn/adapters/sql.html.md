@@ -1,8 +1,14 @@
+---
+title: SQL Adapter
+chapter: Adapters
+---
+
 # SQL Adapter
 
-ROM supports SQL databases via `rom-sql` adapter which currently uses [Sequel](http://sequel.jeremyevans.net/)
-under the hood. The adapter ships with an enhanced `Relation` that supports
-sql-specific query DSL and association macros that simplify constructing joins.
+ROM supports SQL databases via `rom-sql` adapter which currently uses
+[Sequel](http://sequel.jeremyevans.net/) under the hood. The adapter ships with
+an enhanced `Relation` that supports sql-specific query DSL and association
+macros that simplify constructing joins.
 
 ## Setup
 
@@ -37,7 +43,8 @@ Following connection URI schemes are supported:
 
 ## Defining Relations
 
-To define an SQL relation you can use the standard way of defining relations in ROM:
+To define an SQL relation you can use the standard way of defining relations in
+ROM:
 
 ``` ruby
 class Users < ROM::Relation[:sql]
@@ -71,8 +78,8 @@ return a single tuple.
 
 ## Associations
 
-In ROM there's no "relationship" concept, instead you simply use relation interface
-to load data like you want.
+In ROM there's no "relationship" concept, instead you simply use relation
+interface to load data like you want.
 
 ### Using Joins
 
@@ -212,15 +219,19 @@ of defining complex mappers.
 
 ## Commands
 
-SQL commands support all features of the standard [ROM command API](/guides/basics/commands/). In addition, the following SQL-specific features are supported:
+SQL commands support all features of the standard
+[ROM command API](/guides/basics/commands/). In addition, the following
+SQL-specific features are supported:
 
-- The `associates` plugin, for connecting foreign key values when composing commands
-- The `transaction` interface, which provides a block scope for working with database transactions
+- The `associates` plugin, for connecting foreign key values when composing
+  commands
+- The `transaction` interface, which provides a block scope for working with
+  database transactions
 
 ### Associates Plugin
 
-The `associates` plugin is used to automatically set foreign-key values when using
-command composition.
+The `associates` plugin is used to automatically set foreign-key values when
+using command composition.
 
 ``` ruby
 class CreateTask < ROM::Commands::Create[:sql]
@@ -318,7 +329,8 @@ end
 
 Following tasks are available:
 
-* `rake db:create_migration[create_users]` - create migration file under `db/migrations`
+* `rake db:create_migration[create_users]` - create migration file under
+  `db/migrations`
 * `rake db:migrate` - runs migrations
 * `rake db:clean` - removes all tables
 * `rake db:reset` - removes all tables and re-runs migrations

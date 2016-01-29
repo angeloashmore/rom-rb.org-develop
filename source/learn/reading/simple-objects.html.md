@@ -1,12 +1,18 @@
-# Read - Simple
+---
+title: Reading Simple Objects
+chapter: Reading
+---
+
+# Reading Simple Objects
 
 ## Relations
 
-Relations are the basis for reading data. Many adapters, like the popular `rom-sql` support
-automatically inferring default relations from your datastore schema. Hooray!
+Relations are the basis for reading data. Many adapters, like the popular
+`rom-sql` support automatically inferring default relations from your datastore
+schema. Hooray!
 
-If your chosen adapter doesn't support relation inference, or you want to override the default,
-just call `Configuration#relation`.
+If your chosen adapter doesn't support relation inference, or you want to
+override the default, just call `Configuration#relation`.
 
 ```ruby
 rom_container = ROM.container(:sql, 'sqlite::memory') do |rom|
@@ -25,7 +31,8 @@ Most of the time, though, you'll do reading though a *Repository*.
 
 ## Repositories
 
-A Repository ("Repo") object provides a lot of conveniences for reading data with relations.
+A Repository ("Repo") object provides a lot of conveniences for reading data
+with relations.
 
 You need to explicitly declare which `relations` it can access:
 
@@ -47,8 +54,8 @@ user_repo.users.to_a
 # => []
 ```
 
-Depending on how complex your application becomes, you may want to create separate Repository classes to
-subdivide duties.
+Depending on how complex your application becomes, you may want to create
+separate Repository classes to subdivide duties.
 
 ```ruby
 # Assuming a database with tables 'users' and 'projects'
@@ -77,8 +84,8 @@ MyApp.run(user_repo, project_repo)
 
 ### Selector Methods
 
-While defining a Repository, you will also define its methods for domain-specific queries. These are called
-**selector methods**.
+While defining a Repository, you will also define its methods for
+domain-specific queries. These are called **selector methods**.
 
 They use the querying methods provided by the adapter to accomplish their task.
 For example, the `rom-sql` adapter provides methods like `Relation#where`.
@@ -100,7 +107,8 @@ class MyRepository
 end
 ```
 
-Read your adapter's documentation to see the full listing of its Relation methods.
+Read your adapter's documentation to see the full listing of its Relation
+methods.
 
 <aside class="well">
 These are just simple reads. See the <a href="/learn/associations">Associations</a> section to see how to

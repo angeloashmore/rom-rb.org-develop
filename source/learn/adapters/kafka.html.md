@@ -1,21 +1,38 @@
+---
+title: Kafka Adapter
+chapter: Adapters
+---
+
 # Kafka Adapter
 
-ROM supports [Apache Kafka][kafka] via [rom-kafka][rom-kafka] adapter, that is built on top of the [poseidon][poseidon] ruby driver.
+ROM supports [Apache Kafka][kafka] via [rom-kafka][rom-kafka] adapter, that is
+built on top of the [poseidon][poseidon] ruby driver.
 
-*Before v0.1.0 the adapter is still in alpha. If you find any inconsistency, please feel free to ask your questions at the [ROM chatroom][rom-gitter] and report issues [on github][rom-kafka].*
+*Before v0.1.0 the adapter is still in alpha. If you find any inconsistency,
+ please feel free to ask your questions at the [ROM chatroom][rom-gitter] and
+ report issues [on github][rom-kafka].*
 
 ## Intro
 
-The adapter provides access to Kafka brokers in much the same way as other adapters do for corresponding datastores with some specifics:
+The adapter provides access to Kafka brokers in much the same way as other
+adapters do for corresponding datastores with some specifics:
 
-- By the very nature of Kafka, it allows only creating (publishing) messages, and reading (consuming) them. No 'update' and 'delete' commands are available.
+- By the very nature of Kafka, it allows only creating (publishing) messages,
+  and reading (consuming) them. No 'update' and 'delete' commands are available.
 
-- Reading messages from Kafka also differs from what you'd expect from a database. Kafka only supports reading a sequence of messages from a *topic*'s *partition*, starting from some *offset* . You can neither reorder messages or filter them in any way. That operations are up to domain application. All you can define is the topic ([relation](#relation)), its [partition](#partition), initial [offset](#offset), and [limit](#limit) for number of messages to output.
+- Reading messages from Kafka also differs from what you'd expect from a
+  database. Kafka only supports reading a sequence of messages from a *topic*'s
+  *partition*, starting from some *offset* . You can neither reorder messages or
+  filter them in any way. That operations are up to domain application. All you
+  can define is the topic ([relation](#relation)), its [partition](#partition),
+  initial [offset](#offset), and [limit](#limit) for number of messages to
+  output.
 
 ## Setup
 
-Set a Kafka gateway in a [ROM generic way][rom-setup]. When setting a gateway you have to specify the `client_id` and a list of Kafka brokers.
-Brokers can be set in the following ways:
+Set a Kafka gateway in a [ROM generic way][rom-setup]. When setting a gateway
+you have to specify the `client_id` and a list of Kafka brokers. Brokers can be
+set in the following ways:
 
 ```ruby
 # by default (connects to host 'localhost', port 9092)
@@ -60,9 +77,12 @@ In addition to `brokers` and `client_id` you can use the following options:
 
 ### Partitioner
 
-With the `:partitioner` option you can specify a procedure to define a partition by key. The procedure should take 2 arguments for key and number of partitions, and return the integer value for a partition.
+With the `:partitioner` option you can specify a procedure to define a partition
+by key. The procedure should take 2 arguments for key and number of partitions,
+and return the integer value for a partition.
 
-In the following example a message is added to a corresponding partition depending on number of letters in a key:
+In the following example a message is added to a corresponding partition
+depending on number of letters in a key:
 
 ```ruby
 rom = ROM::Configuration.new :kafka, '127.0.0.1',
@@ -93,7 +113,8 @@ class Greetings < ROM::Relation[:kafka]
 end
 ```
 
-To define relations that are exposed to you application you can define your own methods using dataset modifiers:
+To define relations that are exposed to you application you can define your own
+methods using dataset modifiers:
 
 - `#from` to define a partition to read data from (0 by default).
 - `#offset` to define a *starting* offset to start reading from (0 by default).
@@ -123,7 +144,8 @@ greetings.call.to_a
 
 ### Partition
 
-By default messages are read from 0 partition. You can explicitly select the partition to read from:
+By default messages are read from 0 partition. You can explicitly select the
+partition to read from:
 
 ```ruby
 # Will read all messages from the partition 1 of the "greetings" topic
@@ -132,7 +154,9 @@ greetings.call.from(1).to_a
 
 ### Using options
 
-Kafka allows reading messages from given offset. Messages are fetched by chunks - you can set a maximum and minimum length (in bytes), as well as the wait time for the server to responce.
+Kafka allows reading messages from given offset. Messages are fetched by
+chunks - you can set a maximum and minimum length (in bytes), as well as the
+wait time for the server to responce.
 
 This options can be set for a gateway during the [setup phase](#setup):
 
@@ -153,9 +177,11 @@ greetings.from(0).using(min_bytes: 1, max_wait_ms: 1_000).call.to_a
 
 ### Offset
 
-When Kafka reads messages from topic/partition, it stops at some offset. This can be an offset of the last message (at the time of reading).
+When Kafka reads messages from topic/partition, it stops at some offset. This
+can be an offset of the last message (at the time of reading).
 
-If in some period of time you'll make another call, it start reading messages from the next offset (only new ones).
+If in some period of time you'll make another call, it start reading messages
+from the next offset (only new ones).
 
 ```ruby
 greetings = rom.relation(:greetings)
@@ -174,7 +200,8 @@ greetings.call.to_a
 # (only messages being added after the previous call)
 ```
 
-If you need to restart reading from a specific offset, you can do it by setting `offset` explicitly:
+If you need to restart reading from a specific offset, you can do it by setting
+`offset` explicitly:
 
 ```ruby
 rom.relation(:greetings).offset(1).call
@@ -183,7 +210,8 @@ rom.relation(:greetings).offset(1).call
 #    ]
 ```
 
-You can use info from the last extracted tuple to define an offset, from which to start the next time.
+You can use info from the last extracted tuple to define an offset, from which
+to start the next time.
 
 ### Limit
 
@@ -198,9 +226,13 @@ greetings.offset(1).limit(2).call.to_a
 #    ]
 ```
 
-But be careful. Actual size of data being read is defined by `:max_bytes` settings, not the offset.
+But be careful. Actual size of data being read is defined by `:max_bytes`
+settings, not the offset.
 
-For example, when you set `offset(2)`, the relation can actually fetch the chunk of 5 messages (and move the next offset correspodingly). If you continue reading, you'll miss 3 messages. That's why it is **strongly recommended** to set `offset` explicitly after using of `limit` modifier.
+For example, when you set `offset(2)`, the relation can actually fetch the chunk
+of 5 messages (and move the next offset correspodingly). If you continue
+reading, you'll miss 3 messages. That's why it is **strongly recommended** to
+set `offset` explicitly after using of `limit` modifier.
 
 This is unsafe (can cause missing messages):
 
@@ -228,11 +260,14 @@ greetings.offset(1).call.to_a
 #    ]
 ```
 
-Also notice, that every time you use modifier, the new connection is re-established. That's why the **rule of thumb** is either not using modifiers at all, or set the offset explicitly for every call.
+Also notice, that every time you use modifier, the new connection is
+re-established. That's why the **rule of thumb** is either not using modifiers
+at all, or set the offset explicitly for every call.
 
 ## Commands
 
-Kafka supports the `Create` [command only][rom-commands]. You can only add immutable messages to the log, but not to change or delete them.
+Kafka supports the `Create` [command only][rom-commands]. You can only add
+immutable messages to the log, but not to change or delete them.
 
 `ROM::Kafka` provides two helpers for command: `#where` and `#using`.
 
@@ -272,11 +307,15 @@ greet.call "Hi, Joe", "How're you?"
 #    ]
 ```
 
-The producer and consumer connections to Kafka brokers are separated. A command doesn't read messages being written, and knows nothing about partitions and offsets that where assigned by the server. You have to read them explicitly if you need.
+The producer and consumer connections to Kafka brokers are separated. A command
+doesn't read messages being written, and knows nothing about partitions and
+offsets that where assigned by the server. You have to read them explicitly if
+you need.
 
 ## Mappers
 
-Mappers can be applied to relations and commands in a [standard ROM way][rom-mappers].
+Mappers can be applied to relations and commands in a
+[standard ROM way][rom-mappers].
 
 [kafka]: http://kafka.apache.org/
 [poseidon]: https://github.com/bpot/poseidon
