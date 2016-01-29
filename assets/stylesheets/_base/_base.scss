@@ -87,3 +87,9 @@ a {
     color: palette(accent, dark);
   }
 }
+
+mark {
+  background-color: palette(beige);
+  color: palette(beige, extra-dark);
+  padding: rhythm(0.125) rhythm(0.25);
+}

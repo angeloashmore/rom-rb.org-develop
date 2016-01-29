@@ -16,8 +16,6 @@ Depending on your environment, you may want to use different setup strategies:
 * [Flat Style](/learn/advanced/flat-style) - suitable for custom environments
   (advanced usage)
 
-<aside class="well">
-   Note: Most guide examples are written specifically for the <code>rom-sql</code> adapter.
-   If you are using a different one, consult that adapter's documentation as well.
-</aside>
-
+> Note: Most guide examples are written specifically for the `rom-sql` adapter.
+> If you are using a different one, consult that adapter's documentation as
+> well.

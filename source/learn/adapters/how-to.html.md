@@ -95,10 +95,9 @@ relation.select { |tuple| tuple[:name] == 'Jane' }.inspect
 # #<ROM::ArrayAdapter::Relation dataset=[{:name=>"Jane"}]>
 ```
 
-<aside class="well">
-Please remember about setting `adapter` identifier - it is used by ROM to infer
-component types specific to a given adapter. It's essential during the setup.
-</aside>
+> Please remember about setting `adapter` identifier - it is used by ROM to
+> infer component types specific to a given adapter. It's essential during the
+> setup.
 
 ## Registering Your Adapter
 

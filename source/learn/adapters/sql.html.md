@@ -212,10 +212,8 @@ tasks = rom.relation(:tasks)
 users.combine(tasks).one
 ```
 
-<aside class="well">
-It is recommended to user rom-repository with its auto-mapping capabilities instead
-of defining complex mappers.
-</aside>
+> It is recommended to user rom-repository with its auto-mapping capabilities
+> instead of defining complex mappers.
 
 ## Commands
 

@@ -70,11 +70,11 @@ end
 MyApp.run(rom_container)
 ```
 
-<aside class="well">
-  <p>ActiveRecord and DataMapper provide a global access to data, but this is considered a bad practice in
-  modern standards.</p>
-  <p>Injecting the container keeps your app free from persistence details and more flexible for testing.</p>
-</aside>
+> ActiveRecord and DataMapper provide a global access to data, but this is
+> considered a bad practice in modern standards.
+>
+> Injecting the container keeps your app free from persistence details and more
+> flexible for testing.
 
 ## Plugins
 

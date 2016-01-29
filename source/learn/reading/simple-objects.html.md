@@ -110,10 +110,8 @@ end
 Read your adapter's documentation to see the full listing of its Relation
 methods.
 
-<aside class="well">
-These are just simple reads. See the <a href="/learn/associations">Associations</a> section to see how to
-construct multi-relation selector methods using joins.
-</aside>
+> These are just simple reads. See the [Associations](/learn/associations)
+> section to see how to construct multi-relation selector methods using joins.
 
 #### Single Results vs Many Results
 

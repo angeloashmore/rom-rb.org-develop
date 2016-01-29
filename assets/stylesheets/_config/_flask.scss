@@ -3,6 +3,7 @@ $flask-color-base-white: #fff !default;
 $flask-color-base-black: #000 !default;
 $flask-color-base-beige: #f7f5f3 !default;
 $flask-color-base-purple: #a10d87 !default;
+$flask-color-base-red: #dc002e !default;
 
 $palettes: (
   white: (
@@ -27,8 +28,16 @@ $palettes: (
 
   purple: (
     base: $flask-color-base-purple,
+    extra-light: lighten($flask-color-base-purple, 60),
     light: lighten($flask-color-base-purple, 15),
     dark: darken($flask-color-base-purple, 15)
+  ),
+
+  red: (
+    base: $flask-color-base-red,
+    extra-light: lighten($flask-color-base-red, 54),
+    light: lighten($flask-color-base-red, 15),
+    dark: darken($flask-color-base-red, 15)
   )
 );
 
